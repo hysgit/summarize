@@ -1,0 +1,1 @@
+CCharSequence对象!连续append

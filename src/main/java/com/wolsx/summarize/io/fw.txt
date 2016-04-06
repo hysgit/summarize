@@ -1,0 +1,14 @@
+1. io流的总结
+    顶层类：
+        字节流：
+            输入流：InputStream
+            输出流：OutputStream
+
+        字符流：
+            输入流：Reader
+            输出流：Writer
+
+        字节流缓冲区：
+
+        字符流缓冲区：
+abcded
