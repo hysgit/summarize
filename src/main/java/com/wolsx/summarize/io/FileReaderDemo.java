@@ -31,7 +31,7 @@ public class FileReaderDemo {
          * Creates a new FileReader, given the name of the file to read from.
          */
         System.out.println("-------------int read()----------------");
-        FileReader fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        FileReader fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
 
         //然后用read()方法读取单个字节，这里用的是InputStreamReader的方法，因为InputStreamReader从新定义了read()方法，覆盖了Reader中的方法
         int ch;
@@ -51,7 +51,7 @@ public class FileReaderDemo {
          * 这个方法是把输入流中的字符，读取到cbuf数组中。
          */
         System.out.println("---------int read(char cbuf[])-------------");
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         char[] buff = new char[1024];
 
         while(fr.read(buff)!= -1)
@@ -68,7 +68,7 @@ public class FileReaderDemo {
         这个方法从流中读取数据，存储到指定的数组的指定起始位置开始的空间，而原来的数据不受影响
         */
         System.out.println("-----------int read(char cbuf[], int offset, int length)-------------");
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         buff = new char[50];
         buff[0] = '0';
         buff[1] = '1';
@@ -92,7 +92,7 @@ public class FileReaderDemo {
          * 如果n为负数，则抛出IllegalArgumentException异常
          */
         System.out.println("--------------long skip(long n)------------");
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         while ((ch = fr.read()) != -1) {
             System.out.println(fr.skip(3));
             System.out.println((char)ch);
@@ -115,7 +115,7 @@ public class FileReaderDemo {
         System.out.println("----------void reset()-- --------");
         System.out.println("----------void mark(int readAheadLimit)-------");
         System.out.println("----------boolean markSupported()-------");
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
 
         System.out.println(fr.ready());     //true
         while ((ch = fr.read()) != -1);
@@ -130,7 +130,7 @@ public class FileReaderDemo {
          *
          */
         System.out.println(fr.ready());     //false
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         boolean b = fr.markSupported();
 
         System.out.println(b);
@@ -141,7 +141,7 @@ public class FileReaderDemo {
          * String getEncoding(): 返回该流所使用的编码
          */
         System.out.println("-------------String getEncoding()------------");
-        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         System.out.println(fr.getEncoding());
         fr.close();
 
@@ -151,7 +151,7 @@ public class FileReaderDemo {
          * 参数是一个File对象
          * 使用file对象的好处是，可以用File的exists()方法判断文件是否存在
          */
-        File file = new File("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        File file = new File("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         System.out.println("文件是否存在："+file.exists());
         fr = new FileReader(file);
         System.out.println(fr.ready());
@@ -169,7 +169,7 @@ public class FileReaderDemo {
                     然后用这个文件描述符对象构建FileReader对象
 
          */
-        FileInputStream fis = new FileInputStream("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        FileInputStream fis = new FileInputStream("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         FileDescriptor fd = fis.getFD();
         fr = new FileReader(fd);
         ch = fr.read();

@@ -51,8 +51,8 @@ public class FileWriterDemo {
         /**
          *void write(int c)方法 调用的是OutputStreamWriter中的方法，这个方法覆盖了其在Writer中的版本
          */
-        FileWriter fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/fw.txt");
-        FileReader fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/summarize.txt");
+        FileWriter fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/fw.txt");
+        FileReader fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
         int ch = -1;
         while ((ch = fr.read()) != -1) {
             fw.write(ch);//这里参数是int型的，但是写入的时候，并不是写入这个整数对应的字符串，而是该整数对应的字符。
@@ -64,7 +64,7 @@ public class FileWriterDemo {
          * 追加类型的构造的使用
          * FileWriter(File file, boolean append)
          */
-        fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/fw.txt", true);
+        fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/fw.txt", true);
         //经过测试，在使用追加方式的时候，write()会把数据写到文件的最后
         fw.write("abcded");
         fw.close();
@@ -80,7 +80,7 @@ public class FileWriterDemo {
          * 字符流写完了一定要flush或者close。
          * 而且出于效率考虑，在写大量字符的时候，每写一定的字符，就要flush一下
          */
-        fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/fw2.txt");
+        fw = new FileWriter("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/fw2.txt");
         fw.append('C');
         CharSequence csq = "CharSequence对象!";
         fw.append(csq).append("连续append");
