@@ -170,7 +170,7 @@ public class FileReaderDemo {
 
          */
         FileInputStream fis = new FileInputStream("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/summarize.txt");
-        FileDescriptor fd = fis.getFD();
+        FileDescriptor fd = fis.getFD();        //获取到字节流的文件描述符
         fr = new FileReader(fd);
         ch = fr.read();
         System.out.println((char)ch);
@@ -179,9 +179,25 @@ public class FileReaderDemo {
         //利用FileDescriptor中的静态域，构建标准输入流的FileReader对象,然后从a控制台读取字符
         fd = FileDescriptor.in;
         fr = new FileReader(fd);
-        ch = fr.read();
+        ch = fr.read();     //从控制台读取一个字符
         System.out.println((char)ch);
         //System.out.println();
+
+        /**
+         *  FileReader和FileWriter类都是使用默认的字符编码，也就是UTF-8
+         *  假如读取一个GBK编码的文件，会怎么样？
+         *  经过测试，会乱码
+         */
+        fr = new FileReader("/home/hy/workspace/wrksp7/summarize/src/main/java/com/wolsx/summarize/io/txt/gbk.txt");
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(System.out);
+        System.out.println(fr.getEncoding());
+
+        while ((ch = fr.read()) != -1) {
+            System.out.print((char)ch);     //乱码 会立刻输出
+            outputStreamWriter.write(ch);       //乱码 这里不会立刻输出，而是等到后面close的时候才会输出
+        }
+        fr.close();
+        outputStreamWriter.close();
 
     }
 }
