@@ -9,7 +9,7 @@ import java.io.*;
 public class BufferedInputStreamDemo {
     public static void main(String[] args) throws IOException {
         /**
-         * BufferedInputStream: 字节输入流缓冲类，也就是为字节输入流提供了缓冲区功能
+         * BufferedInputStream: 字节输入流缓冲类，也就是为字节输入流提供了缓冲区功能,提高了读字节输入流的效率
          * 继承：
          *      java.lang.Object
                     java.io.InputStream
@@ -17,6 +17,8 @@ public class BufferedInputStreamDemo {
                             java.io.BufferedInputStream
          *  这里可以看出，这个类是继承自FilterInputStream，也就是说它是个包装类，看构造函数就能知道，
          *  它就是对字节输入流进行了包装
+         *  因为这个类是继承自InputStream类，又因为它没有新增加公共方法，只是覆盖了InputStream的方法，
+         *  所以把它当做InputStream对象使用，效果是一样的。只不过它支持了缓冲和mark/reset，但是使用上是一样的。
          *
          *
          * 构造函数：
@@ -32,6 +34,16 @@ public class BufferedInputStreamDemo {
          *      protected int	markpos     标记位置 最后一次调用mark时pos的值，也就是mark标记的位置
          *      protected int	pos         当前位置
          *      这几个字段，都是BufferedInputStream内部使用的，当用它创建对象后，不能通过对象直接访问它
+         *
+         * 方法：
+         *      int	available()
+         *      void	close()
+         *      void	mark(int readlimit)
+         *      boolean	markSupported()
+         *      int	read()
+         *      int	read(byte[] b, int off, int len)
+         *      void	reset()
+         *      long	skip(long n)
          *
          */
 
