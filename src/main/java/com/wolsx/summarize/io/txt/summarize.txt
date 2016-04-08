@@ -12,6 +12,10 @@
     字节流缓冲区：
             BufferedInputStream
             BufferedOutputStream
+            这2个类都是包装器类，对流提供了缓冲功能，其内部有缓冲区。当读操作的时候，就算调用read方法只是读一个字节，
+            缓冲器对象会一次性读入多个字节，这样后续的read操作，就可以直接从缓冲区中取数据。
+            输出也是一样，每次写操作，并不会直接写如到流，而是先存在缓冲区中。
+
     字符流缓冲区：
             BufferedReader
             BufferedWriter
@@ -31,6 +35,15 @@
             FileReader
         输出流：
             FileWriter
+
+    过滤器类：
+        FilterInputStream
+        FilterOutputStream
+        这2个类是java io中包装器的基本代理类。
+        这2个类，对构造对象的时候传入的对象，都只进行了简单的转发。而其子类，可以再重写方法，对方法调用进行过滤。
+        这种包装器模式的典型应用，就是缓冲类：BufferedInputStream/BufferedOutputStream
+
+
 
 
 
