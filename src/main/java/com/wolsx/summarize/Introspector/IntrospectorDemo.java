@@ -35,6 +35,7 @@ public class IntrospectorDemo {
              * 前面一个方法，会把继承来的属性一并解析出来，比如class属性，而下面的这个方法，
              * 可以指定在内省的时候，在继承树上哪个类开始停止解析属性。
              */
+            System.out.println("------------------------------------");
             BeanInfo beanInfo2 = Introspector.getBeanInfo(Person.class, Object.class);
             pds = beanInfo2.getPropertyDescriptors();
             for (PropertyDescriptor pd : pds) {
