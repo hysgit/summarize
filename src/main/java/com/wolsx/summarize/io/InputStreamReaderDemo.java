@@ -29,6 +29,9 @@ public class InputStreamReaderDemo {
          * InputStreamReader处理的字节流本身对应的内容是字符形式存在的，只不过字符流传输或者存储的时候，必定是以字节流形式
          * FileReader类实际上，本身就具备了把一个文件处理成字符流的能力,因为，FileReader就是因为继承自InputStreamReader
          * 所以才具有这个能力
+         * 可以这样认为，字符流，虽然从类的继承上来说，它是和字节流各自独立的类结构体系，但是，在底层，字符流还是依据于字节流的。
+         * 这点，可以从InputStreamReader类的构造函数上看出来，所有的构造函数，都必须要有一个字节输入流为对象。
+         * 虽然FileReader类，并不需要输入流为参数，但是，其在内部，自己根据给定的参数，构建了字节输入流
          */
 
         /**
@@ -42,7 +45,7 @@ public class InputStreamReaderDemo {
          *      InputStreamReader(InputStream in)
          *      InputStreamReader(InputStream in, Charset cs)
          *      InputStreamReader(InputStream in, CharsetDecoder dec)
-         *      InputStreamReader(InputStream in, String charsetName)
+         *      InputStreamReader(InputStream in, String charsetName)   以字符串的形式，指定字符编码
          *      从这四个构造函数可以看出，其核心的参数都是InputStream这个字节流对象，第一个构造函数，使用默认的字符编码
          *      后面3个构造函数，都是附加了流的编码，只是表现形式不同。
          *      这里流的编码，指的是对字节流使用哪种编码进行解码，因为对于字节流本身来说，没有所谓的编码，编码从来都是对于字符来说的
