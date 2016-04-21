@@ -25,6 +25,7 @@ public class OutputStreamWriterDemo {
          *  而InputStreamReader和OutputStreamWriter是他们的子类，是可以实例化的类。在字符输入输出上，这2个类是最基本的类，
          *  最通用。
          *  他们处理的对象，是任何的字节输入流和字节输出流
+         *  所以，字符流，是对字节流的解码包装。字符流是字节流的更高一层。
          *  而FileReader和FileWriter是InputStreamReader和OutputStreamWriter的子类，他们是特别为了处理文本文件而实现的类。
          *  有了这2个类，操作文件的时候，就不用先建立字节输入流和字节输出流了。
          *  因为这里面有个编码转换的工作，所以每次调用write方法的时候，都会在要写的字符上调用转换器，对字符进行转换
