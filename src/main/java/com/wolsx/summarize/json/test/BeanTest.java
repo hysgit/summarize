@@ -1,5 +1,9 @@
 package com.wolsx.summarize.json.test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by hy
  * Date: 16-4-21.
@@ -10,6 +14,25 @@ public class BeanTest {
     private String[] str;
     private Integer[] intstr;
     private Person person;
+    private List<Person> list;
+    private Person[] arrper;
+
+
+    public List<Person> getList() {
+        return list;
+    }
+
+    public void setList(List<Person> list) {
+        this.list = list;
+    }
+
+    public Person[] getArrper() {
+        return arrper;
+    }
+
+    public void setArrper(Person[] arrper) {
+        this.arrper = arrper;
+    }
 
     public Person getPerson() {
         return person;
