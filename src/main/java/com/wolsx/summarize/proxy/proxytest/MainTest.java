@@ -20,6 +20,7 @@ public class MainTest {
                 System.out.println("<<<after: str is :" + str);
             }
         });
+        System.out.println(proxyIntance.hashCode());
         Class<CharSequence> charSequenceClass = CharSequence.class;
         Method[] methods = charSequenceClass.getMethods();
         for (Method method : methods) {
