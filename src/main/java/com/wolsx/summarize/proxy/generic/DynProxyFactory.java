@@ -12,7 +12,7 @@ import java.util.List;
 public class DynProxyFactory {
     public static <T> T getProxyInstance(Object obj)
     {
-        return (T)Proxy.newProxyInstance(DynProxyFactory.class.getClassLoader(),
+        return (T) Proxy.newProxyInstance(DynProxyFactory.class.getClassLoader(),
                 obj.getClass().getInterfaces(), new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -28,7 +28,7 @@ public class DynProxyFactory {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        List proxyInstance = DynProxyFactory.getProxyInstance(list);
+        List<String> proxyInstance = DynProxyFactory.getProxyInstance(list);
         proxyInstance.add("xey");
     }
 }
