@@ -16,8 +16,8 @@ public class OutputStreamWriterDemo {
          *      java.lang.Object
                     java.io.Writer
                         java.io.OutputStreamWriter
-         *  这个类是从字符流到字节流的桥梁，简单来说，就是把字符按照默认或者指定的编码，encode为字节并输出
-         *  InputStreamReader是为了解决从文本文件或者其他输入流中直接读取字符的问题，因为文件是以字节的方式存储的，
+         *  这个类是 从 字符流 到 字节流 的 桥梁，简单来说，就是 把 字符 按照 默认 或者 指定的 编码，encode为 字节 并输出
+         *  InputStreamReader是为了 解决 从 文本文件 或者 其他 输入流 中 直接 读取字符 的问题，因为文件是以字节的方式存储的，
          *  所以要想读取到字符，必然有个解码的过程，如果没有这个类，那么读取字符的时候，要自己把读取到的字节解码为字符
          *  同样，OutputStreamWriter，是为了解决写字符的问题，因为字符输出到文件或者其他，必然是以二进制的形式保存的，所以也有一个对
          *  字符进行编码的问题，这个类也是提供了一个便捷的形式。
