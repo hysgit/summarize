@@ -18,13 +18,13 @@ import java.io.*;
  它实现的接口：
     Closeable, AutoCloseable, Readable
  从继承关系来看，这个流是继承自Reader，这是个字符流
- 这个类没有任何自定义方法，所有方法都是继承来的,这个类继承于InputStreamReader，它只是特定于从文件构建字节输入流对象
+ 这个类没有任何自定义方法，所有方法都是继承来的,这个类继承于InputStreamReader，它只是特定于从文件构建字符输入流对象
  所以，它的构造函数，都是方便从文件角度创建对象的：
  FileReader(String fileName) 根据文件名创建字符输入流对象
  FileReader(File file)  根据文件对象创建字符输入流对象
  FileReader(FileDescriptor fd)  根据文件描述符创建字符输入流对象
 
- Reader的read()方法有4个，而InputStreamReader继承了Reader，但是，InputStreamReader实现了int read()，重新定义了
+ Reader的 read()方法 有4个，而InputStreamReader继承了Reader，但是，InputStreamReader实现了int read()，重新定义了
  read(char cbuf[], int offset, int length)方法
  根据继承规则，当FileReader类调用这2个read方法的时候，调用的是InputStreamReader方法。
  */

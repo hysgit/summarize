@@ -8,6 +8,10 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class ConcurrentMapTest {
     public static void main(String[] args) {
-        System.out.println(new Date().getTime());
+        int num = 100 - 2;
+        double step = num*1.0/48;
+        for(int i = 0; i < 48; i++){
+            System.out.println(((int) ((i + 1) * step)));
+        }
     }
 }
