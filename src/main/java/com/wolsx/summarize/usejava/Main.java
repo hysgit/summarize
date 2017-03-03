@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class Main
 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br11 = new BufferedReader(new FileReader("/home/hy/tmp/log/bbkjnurs/16.txt"));
+        BufferedReader br11 = new BufferedReader(new FileReader("/home/hy/tmp/log/11.txt"));
 
 
         StringBuilder sb = new StringBuilder();
