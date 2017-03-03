@@ -1,4 +1,4 @@
-package com.wolsx.summarize.javabasic.classuse;
+package com.wolsx.summarize.javabasic.calendar;
 
 import org.junit.Test;
 

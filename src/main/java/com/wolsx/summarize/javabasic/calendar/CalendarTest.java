@@ -1,4 +1,4 @@
-package com.wolsx.summarize.javabasic.classuse;
+package com.wolsx.summarize.javabasic.calendar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

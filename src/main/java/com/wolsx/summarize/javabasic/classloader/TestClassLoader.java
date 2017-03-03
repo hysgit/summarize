@@ -1,6 +1,6 @@
 package com.wolsx.summarize.javabasic.classloader;
 
-import com.wolsx.summarize.javabasic.classuse.CalendarTest;
+import com.wolsx.summarize.javabasic.calendar.CalendarTest;
 import org.junit.Test;
 
 /**
