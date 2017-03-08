@@ -87,9 +87,9 @@
 
         <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
         <!--<dependency>-->
-            <!--<groupId>commons-httpclient</groupId>-->
-            <!--<artifactId>commons-httpclient</artifactId>-->
-            <!--<version>3.1</version>-->
+        <!--<groupId>commons-httpclient</groupId>-->
+        <!--<artifactId>commons-httpclient</artifactId>-->
+        <!--<version>3.1</version>-->
         <!--</dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
@@ -108,9 +108,28 @@
             <artifactId>aliyun-sdk-datahub</artifactId>
             <version>2.3.0-public</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.htmlparser/htmlparser -->
+        <dependency>
+            <groupId>org.htmlparser</groupId>
+            <artifactId>htmlparser</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.1.0</version>
+        </dependency>
 
 
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>Eclipse Paho Repo</id>
+            <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>

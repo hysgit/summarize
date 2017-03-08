@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class Main
 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br11 = new BufferedReader(new FileReader("/home/hy/tmp/log/11.txt"));
+        BufferedReader br11 = new BufferedReader(new FileReader("/home/hy/tmp/log/bbkjnurs/1.txt"));
 
 
         StringBuilder sb = new StringBuilder();
@@ -48,7 +48,7 @@ public class Main
                 {
                     min = dif;
                 }
-                if(dif > 15*1000)
+                if(dif > 60*1000)
                 {
                     maxlist.add(dif);
                     System.out.println(lo);
