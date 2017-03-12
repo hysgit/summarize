@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Main2
 {
     public static void main(String[] args) throws IOException {
-        String fileName = "/home/hy/tmp/log/bbkjnurs/2.txt";
+        String fileName = "/home/hy/tmp/log/bbkjnurs/6.txt";
         BufferedReader br11 = new BufferedReader(new FileReader(fileName));
 
         String sn = fileName.replace("/home/hy/tmp/log/bbkjnurs/", "").replace(".txt", "");
