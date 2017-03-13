@@ -6,6 +6,8 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ScheduledExecutorService;
 
 public class Client {
@@ -14,6 +16,7 @@ public class Client {
     public static final String TOPIC = "TIME";
     public static final String TOPIC1 = "TIME/+";
     public static final String TOPIC2 = "HR/+";
+    public static final String TOPIC21 = "HR/001";
     private static final String clientid = "client124";
     private MqttClient client;
     private MqttConnectOptions options;
@@ -47,7 +50,27 @@ public class Client {
             client.connect(options);
             //订阅消息
             int[] Qos = {1};
-            String[] topic1 = {TOPIC1};
+            String[] topic1 = {TOPIC2};
+            //client.publish();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while(true) {
+                        try {
+                            String format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss.SSS").format(new Date());
+                            client.publish(TOPIC21, format.getBytes(), 1, true);
+                            System.out.println("发布的消息:" + format);
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        } catch (MqttException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }).start();
             client.subscribe(topic1, Qos);
 
         } catch (Exception e) {
