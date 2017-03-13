@@ -3,6 +3,7 @@ package com.wolsx.summarize.usejava;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -62,12 +63,12 @@ public class Main2
                     Matcher matcher = p2.matcher(pre);
                     if(matcher.find())
                     {
-                        System.out.println(matcher.group());
+                        System.out.println("服务器接收到的时间: "+matcher.group() +" 数据包中的时间: "+ first + " "+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(first)));
                     }
                     matcher = p2.matcher(nowstr);
                     if(matcher.find())
                     {
-                        System.out.println(matcher.group());
+                        System.out.println("服务器接收到的时间: "+matcher.group() +" 数据包中的时间: "+ key + " "+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(key)));
                     }
                     System.out.println("");
 
